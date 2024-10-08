@@ -1,0 +1,265 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+}
+
+.head {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(204, 255, 133);
+  color: rgb(98, 54, 1);
+}
+
+.head h1 {
+  margin: 0; /*Margin은 여백 없에는것*/
+}
+
+.head button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.934);
+  color: white;
+  border: none;
+  width: 100px;
+  border-radius: 60px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.head button:hover {
+  background-color: green;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  padding: 80px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-button button {
+  width: 40px;
+  height: 30px;
+  background-color: white;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-button button:hover {
+  background-color: #ccc;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+}
+
+.formhead label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.formbody label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type='text'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+
+  word-wrap: break-word; /* 긴 단어 줄 바꿈 허용 */
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button[type='submit'] {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/*게시글 조회 모달 */
+.content-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  max-width: 900px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  word-wrap: break-word; /* 줄 바꿈으로 넣어놔야함*/
+}
+
+.cmodal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.cmodal-button button {
+  width: 40px;
+  height: 30px;
+  background-color: white;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cmodal-button button:hover {
+  background-color: #ccc;
+}
+
+.cmodal-content {
+  height: calc(100% - 50px);
+  overflow-y: auto; /*수직 스크롤 */
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.cmodal-content h2 {
+  font-size: 24px;
+}
+
+.cmodal-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cmodal-content h3 {
+  float: right;
+
+  color: gray;
+}
+
+.likebtn button {
+  margin-top: 10px;
+  margin-left: 45%;
+  float: left;
+  border: 0;
+  background-color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.deletebtn button {
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  float: right;
+  width: 120px;
+  font-size: 20px;
+  height: 30px;
+}
+
+/*포스트 리스트 테이블*/
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse; /*테두리 깔끔하게 하나로 하비기 */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #4caf50;
+  color: white;
+}
+
+table th,
+table td {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table th {
+  font-size: 18px;
+}
+
+table td {
+  font-size: 16px;
+}
+
+table tr td span {
+  cursor: pointer;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+table tr td span:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 > 미디어 쿼리 */
+@media (max-width: 768px) {
+  .modal,
+  .content-modal {
+    width: 95%;
+    height: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  input[type='text'],
+  textarea {
+    font-size: 0.9rem;
+  }
+}
